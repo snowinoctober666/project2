@@ -17,6 +17,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+
 import java.awt.*;
 
 
@@ -34,17 +39,13 @@ public class JavaFXTemplate extends Application {
 		primaryStage.setTitle("Welcome to KENO");
 		Group root = new Group();
 		Scene scene = new Scene(root, 700,700);
-
-
 		Text text = new Text ("Welcome to KENO");
 		text.setTextOrigin(VPos.TOP);
 		text.setFont(Font.font(null, FontWeight.BOLD,70));
 
 		text.layoutXProperty().bind(scene.widthProperty().subtract(text.prefWidth(-1)).divide(2));
 		text.layoutYProperty().bind(scene.widthProperty().subtract(text.prefWidth(-1)).divide(2));
-
    		root.getChildren().add(text);
-
 
 
 		MenuBar welcome = new MenuBar();
@@ -59,37 +60,23 @@ public class JavaFXTemplate extends Application {
 		MenuItem m4 = new MenuItem("Play");
 
 
+
 		BorderPane p = new BorderPane();
+		p.setTop(welcome);
+		Scene a = new Scene(p);
+		primaryStage.setScene(a);
+		primaryStage.setWidth(500);
+		primaryStage.setHeight(500);
 
-		p.setTop(root);
-		Scene sc = new Scene(p);
-       primaryStage.setScene(sc);
-	   primaryStage.show();
 
-
-
-	//	MenuBar menuBar = new MenuBar();
-
-		primaryStage.setScene(scene);
 		primaryStage.show();
 
 
+		primaryStage.setScene(scene);
+
+		primaryStage.show();
 
 
-//	     FadeTransition ft = new FadeTransition(Duration.millis(5000), rect);
-//	     ft.setFromValue(1.0);
-//	     ft.setToValue(0.3);
-//	     ft.setCycleCount(4);
-//	     ft.setAutoReverse(true);
-
-//	     ft.play();
-//	     BorderPane root = new BorderPane();
-	    // root.setCenter(rect);
-
-//	     Scene scene = new Scene(root, 700,700);
-
-
-		
 	}
 
 }
