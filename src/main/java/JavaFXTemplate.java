@@ -53,26 +53,31 @@ public class JavaFXTemplate extends Application {
 
 		welcome.getMenus().add(m);
 
+	  MenuItem rules = new MenuItem ("display the rules of the game");
+	  MenuItem odds = new MenuItem ("display the odds of the game");
+	  MenuItem exit = new MenuItem("exit the game");
+	  MenuItem play = new MenuItem("Play game");
 
-		MenuItem m1 = new MenuItem("display the rules of the game");
-		MenuItem m2 = new MenuItem("display the rules of the game");
-		MenuItem m3 = new MenuItem("exit the game");
-		MenuItem m4 = new MenuItem("Play");
+	  	m.getItems().add(rules);
+		m.getItems().add(odds);
+		m.getItems().add(exit);
+		m.getItems().add(play);
 
+//		MenuItem m1 = new MenuItem("display the rules of the game");
+//		MenuItem m2 = new MenuItem();
+//		MenuItem m3 = new MenuItem("exit the game");
+//		MenuItem m4 = new MenuItem("Play");
 
 
 		BorderPane p = new BorderPane();
 		p.setTop(welcome);
-		Scene a = new Scene(p);
-		primaryStage.setScene(a);
+		Scene sc = new Scene(p);
+		primaryStage.setScene(sc);
 		primaryStage.setWidth(500);
 		primaryStage.setHeight(500);
 
-
-		primaryStage.show();
-
-
-		primaryStage.setScene(scene);
+		primaryStage.setScene(sc);  //menu scene
+//		primaryStage.setScene(scene);
 
 		primaryStage.show();
 
